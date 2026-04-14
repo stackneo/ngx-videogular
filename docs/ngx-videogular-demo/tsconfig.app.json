@@ -5,21 +5,13 @@
     "sourceMap": true,
     "declaration": false,
     "moduleResolution": "bundler",
-    "lib": [
-      "es2022",
-      "dom"
-    ],
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true
   },
   "include": ["**/*.d.ts"],
   "files": ["src/main.ts", "src/polyfills.ts"],
-  "exclude": [
-    "src/test.ts",
-    "**/*.spec.ts",
-    "../libs"
-  ],
+  "exclude": ["src/test.ts", "**/*.spec.ts", "../libs"],
   "angularCompilerOptions": {
     "enableIvy": true,
     "preserveWhitespaces": false,
