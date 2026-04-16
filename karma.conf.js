@@ -30,12 +30,15 @@ module.exports = () => {
     colors: true,
     logLevel: constants.LOG_INFO,
     autoWatch: true,
-    //TODO: Add Firefox back
-    browsers: ["Chrome"],
+    browsers: ["Chrome", "FirefoxHeadless"],
     customLaunchers: {
       ChromeHeadlessCI: {
         base: "ChromeHeadless",
         flags: ["--no-sandbox", "--disable-gpu"],
+      },
+      FirefoxHeadless: {
+        base: "Firefox",
+        flags: ["-headless"],
       },
     },
     singleRun: true,
