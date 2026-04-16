@@ -8,12 +8,13 @@
       "prefix": "vg",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/docs/ngx-videogular-demo",
+            "outputPath": {
+              "base": "dist/docs/ngx-videogular-demo"
+            },
             "index": "docs/ngx-videogular-demo/src/index.html",
-            "main": "docs/ngx-videogular-demo/src/main.ts",
-            "polyfills": "docs/ngx-videogular-demo/src/polyfills.ts",
+            "polyfills": ["docs/ngx-videogular-demo/src/polyfills.ts"],
             "tsConfig": "docs/ngx-videogular-demo/tsconfig.app.json",
             "assets": [
               "docs/ngx-videogular-demo/src/favicon.ico",
@@ -24,12 +25,11 @@
               "node_modules/normalize.css/normalize.css"
             ],
             "scripts": [],
-            "vendorChunk": true,
             "extractLicenses": false,
-            "buildOptimizer": false,
             "sourceMap": true,
             "optimization": false,
-            "namedChunks": true
+            "namedChunks": true,
+            "browser": "docs/ngx-videogular-demo/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -43,9 +43,7 @@
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true
+              "extractLicenses": true
             }
           },
           "defaultConfiguration": ""

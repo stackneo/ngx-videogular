@@ -15,23 +15,14 @@
     "experimentalDecorators": true,
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
-    "lib": [
-      "es2022",
-      "dom"
-    ],
     "types": [],
     "paths": {
-      "@videogular/ngx-videogular/*": [
-        "./*/src/index"
-      ]
+      "@videogular/ngx-videogular/*": ["./*/src/index"]
     }
   },
   "files": ["public-api.ts"],
   "include": ["**/*.ts"],
-  "exclude": [
-    "test.ts",
-    "**/*.spec.ts"
-  ],
+  "exclude": ["test.ts", "**/*.spec.ts"],
   "angularCompilerOptions": {
     "annotateForClosureCompiler": true,
     "strictMetadataEmit": true,
