@@ -1,4 +1,4 @@
-import {Observable, Subject} from 'rxjs';
+import { Observable, Subject } from "rxjs";
 
 // TODO: Come up with a better name for this file.
 
@@ -20,7 +20,7 @@ export interface IPlayable {
   duration: number;
   currentTime: number;
 
-  // tslint:disable: ban-types
+  // eslint-disable ban-types
   play: Function;
   pause: Function;
   addTextTrack?: Function;

@@ -1,4 +1,4 @@
-// tslint:disable: no-namespace
+// eslint-disable no-namespace
 declare namespace google {
   export namespace ima {
     /**

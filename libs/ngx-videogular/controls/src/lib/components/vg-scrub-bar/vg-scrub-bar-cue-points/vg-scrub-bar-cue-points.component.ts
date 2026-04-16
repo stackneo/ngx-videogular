@@ -8,28 +8,27 @@ import {
   DoCheck,
   SimpleChange,
   ViewEncapsulation,
-} from '@angular/core';
-import { Subscription } from 'rxjs';
-import { VgApiService } from '@videogular/ngx-videogular/core';
+} from "@angular/core";
+import { Subscription } from "rxjs";
+import { VgApiService } from "@videogular/ngx-videogular/core";
 
-
-// tslint:disable-next-line: no-conflicting-lifecycle
+// eslint-disable-next-line no-conflicting-lifecycle
 @Component({
-    selector: 'vg-scrub-bar-cue-points',
-    encapsulation: ViewEncapsulation.None,
-    template: `
+  selector: "vg-scrub-bar-cue-points",
+  encapsulation: ViewEncapsulation.None,
+  template: `
     <div class="cue-point-container">
       @for (cp of cuePoints; track cp) {
-        <span
-          [style.width]="cp.$$style?.width"
-          [style.left]="cp.$$style?.left"
-          class="cue-point"
-        ></span>
+      <span
+        [style.width]="cp.$$style?.width"
+        [style.left]="cp.$$style?.left"
+        class="cue-point"
+      ></span>
       }
     </div>
-    `,
-    styles: [
-        `
+  `,
+  styles: [
+    `
       vg-scrub-bar-cue-points {
         display: flex;
         width: 100%;
@@ -47,11 +46,12 @@ import { VgApiService } from '@videogular/ngx-videogular/core';
         top: calc(50% - 3px);
       }
     `,
-    ],
-    standalone: false
+  ],
+  standalone: false,
 })
 export class VgScrubBarCuePointsComponent
-  implements OnInit, OnChanges, OnDestroy, DoCheck {
+  implements OnInit, OnChanges, OnDestroy, DoCheck
+{
   @Input() vgCuePoints: TextTrackCueList;
   @Input() vgFor: string;
 
@@ -103,16 +103,16 @@ export class VgScrubBarCuePointsComponent
             ? this.vgCuePoints[i].endTime
             : this.vgCuePoints[i].startTime + 1;
         const cuePointDuration = (end - this.vgCuePoints[i].startTime) * 1000;
-        let position = '0';
-        let percentWidth = '0';
+        let position = "0";
+        let percentWidth = "0";
 
-        if (typeof cuePointDuration === 'number' && this.target.time.total) {
+        if (typeof cuePointDuration === "number" && this.target.time.total) {
           percentWidth =
-            (cuePointDuration * 100) / this.target.time.total + '%';
+            (cuePointDuration * 100) / this.target.time.total + "%";
           position =
             (this.vgCuePoints[i].startTime * 100) /
               Math.round(this.target.time.total / 1000) +
-            '%';
+            "%";
         }
 
         (this.vgCuePoints[i] as any).$$style = {

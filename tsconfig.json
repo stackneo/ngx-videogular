@@ -3,6 +3,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "moduleResolution": "bundler",
+    "allowJs": true,
     "emitDecoratorMetadata": false,
     "experimentalDecorators": true,
     "esModuleInterop": true,
@@ -19,5 +20,6 @@
     },
     "useDefineForClassFields": false
   },
+  "include": ["commitlint.config.js", ".eslintrc.js"],
   "exclude": ["node_modules", "tmp"]
 }
